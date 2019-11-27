@@ -55,6 +55,7 @@ public class UserServiceImpl implements UserService {
     public ResponseEntity<String> delete(String username) {
         User user = userRepository.findByUsername(username)
                 .orElseThrow(()-> new RuntimeException("User with such username not found"));
+
         userRepository.delete(user);
         log.info("IN delete - user with login: {} successfully deleted", username);
         return ResponseEntity.ok().body("User deleted successfully!");

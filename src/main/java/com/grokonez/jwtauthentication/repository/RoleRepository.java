@@ -12,4 +12,5 @@ import com.grokonez.jwtauthentication.model.RoleName;
 @Repository
 public interface RoleRepository extends JpaRepository<Role, Long> {
     Optional<Role> findByName(RoleName roleName);
+
 }
